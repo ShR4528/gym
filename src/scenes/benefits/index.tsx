@@ -1,13 +1,14 @@
 import ActionButton from '@/shared/ActionButton';
 import HText from '@/shared/HText';
 import Benefit from '@/scenes/benefits/Benefit';
-import {BenefitType,  SelectedPage } from '@/shared/types';
+import { motion } from 'framer-motion';
+import { BenefitType, SelectedPage } from '@/shared/types';
 import {
   HomeModernIcon,
  UserGroupIcon,
   AcademicCapIcon,
 } from '@heroicons/react/24/solid';
-import { motion } from 'framer-motion';
+
 //import BenefitsPageGraphic from '@/assets/BenefitsPageGraphic.png';
 
 const benefits: Array<BenefitType> = [
@@ -27,10 +28,11 @@ const benefits: Array<BenefitType> = [
 ]
 
 const container = {
-  hidden: { opacity: 0 },
+  // обьяснение { opacity: 0 },
+  hidden: { },
   visible: {
     transition: { staggerChildren: 0.2 }
-     }
+    }
   }
 
 
@@ -40,27 +42,36 @@ type Props = {
 
 const Benefits = ({ setSelectedPage }: Props) => {
   return (
-    <section id='benefits'
-      className='mx-auto 
-            min-h-full
-             w-5/6 py-20'>
-      <motion.div 
+
+    <section id='benefits' className='mx-auto min-h-full w-5/6 py-20'>
+    <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
-        >
+      >
+
         {/* HEADER */}
-        <div className='md:my-5 md:w-3/5'>
+        <motion.div  className='md:my-5 md:w-3/5'
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}>
           <HText> More Than Just Gym. </HText>
           <p className='my-5 text-sm'>
-          We provide world class fitness equipment, trainers and classes to
+            We provide world class fitness equipment, trainers and classes to
             get you to your ultimate fitness goals with ease. We provide true
             care into each and every member.
           </p>
-          </motion.div>
+        </motion.div>
+
         {/* BENEFITS */}
-        <div
-          className="mt-5 items-center justify-between gap-8 md:flex"
-          initial="hidden"
-          whileInView="visible"
+
+        <motion.div className='mt-5 
+        items-center  justify-between  gap-8 md:flex'
+          initial='hidden'
+          whileInView='visible'
           viewport={{ once: true, amount: 0.5 }}
           variants={container}
         >
@@ -73,10 +84,34 @@ const Benefits = ({ setSelectedPage }: Props) => {
               setSelectedPage={setSelectedPage}
             />
           ))}
-        </div>  
-      </div>
-      </motion.div>
-    </section>
+        </motion.div>
+        
+      {/*  Graphic And Description*/}
+        <div>
+          {/* Graphic Image */}
+          <img src="" alt="" />
+
+          {/* Description */}
+          <div>
+            {/* Title */}
+            <div className='relative'>
+              <div className='before:absolute before:-top-20 before:-left-20 before:z-[1] before:content-abstractwaves'>
+                <div>
+                  <HText>
+                  MILLIONS OF HAPPY MEMBERS GETTING{" "}
+                    <span className="text-primary-500">FIT</span>
+                  </HText>
+                </div>
+              </div>
+            </div>
+            {/* Descript */}
+
+           {/* button */}
+            
+            </div>
+            </div>
+    </motion.div>
+  </section>
   )
 }
 

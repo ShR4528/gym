@@ -14,13 +14,15 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 }
 
-const Benefit = ({ setSelectedPage, icon, title, description }:Props) => {
+const Benefit = ({ setSelectedPage, icon, title, description }: Props) => {
   return (
     
     <motion.div
+      
       variants={childVariant}
       className='mt-5 rounded-md border-2
-       border-gray-100 px-5 py-16 text-center'>
+       border-gray-100 px-5 py-16 text-center'
+        >
       <div className='mb-4 flex justify-center'>
         <div className='rounded-full border-2
          border-gray-400
@@ -29,6 +31,7 @@ const Benefit = ({ setSelectedPage, icon, title, description }:Props) => {
           {icon}
         </div>
       </div>
+      
       <h4 className='font-bold'>{title}</h4>
       <p className='my-3'>{description}</p>
       <AnchorLink
