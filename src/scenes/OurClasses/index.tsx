@@ -39,9 +39,11 @@ const OurClasses = ({ setSelectedPage }: Props) => {
                             facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit
                             enim mattis odio in risus nunc. 
                             </p>
-                     
-                    </div>
+                        </div>
                 </motion.div>
+                <div>
+                    
+                </div>
             </motion.div>
       </section>
   )
