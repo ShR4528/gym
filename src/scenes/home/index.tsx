@@ -20,14 +20,17 @@ const Home = ({ setSelectedPage }: Props) => {
   return (
       <section
           id='home'
-          className='gap-16 bg-gray-400 py-10 md:h-full md:pb-0'>
+          className='gap-16 bg-black py-10 md:h-full md:pb-0'>
           {/* image and header */}
           <motion.div className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'
           onViewportEnter={() =>setSelectedPage(SelectedPage.Home)}
           >
               {/* main header */}
+
               <div className='z-10 mt-32 mb:basis-3/5'>
+                  
                   {/* headings */}
+                  
                   <motion.div
                       className='md:-mt-20'
                       initial='hidden'
@@ -43,9 +46,10 @@ const Home = ({ setSelectedPage }: Props) => {
                           <div className='before:absolute 
                           before:-top-20 
                            before:-left-20
-                           before:z-[-1]
-                            before:content-evolvetext'>
+                           before:z-[-1]'
+                          >
                               {/* фото  logo*/}
+
                               <img src={HomePageText} alt='home-page-text' />
                           </div>
                       </div>
