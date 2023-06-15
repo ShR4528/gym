@@ -3,6 +3,7 @@ import { SelectedPage } from '@/shared/types';
 import ActionButton from '@/shared/ActionButton';
 import HomePageText from '@/assets/HomePageText.png';
 import HomePageGraphic from '@/assets/HomePageGraphic.png';
+import hero from '@/assets/hero.png';
 import fitness from '@/assets/fitness.png';
 import SponsorRedBull from '@/assets/SponsorRedBull.png';
 import SponsorForbes from '@/assets/SponsorForbes.png';
@@ -51,6 +52,7 @@ const Home = ({ setSelectedPage }: Props) => {
                               {/* фото  logo*/}
 
                               {/* <img src={HomePageText} alt='home-page-text' />  */}
+                             
                           </div>
                       </div>
                       <p className='mt-8 text-sm md:text-start'>
@@ -86,6 +88,7 @@ const Home = ({ setSelectedPage }: Props) => {
                   {/* image */}
               <div className='flex basis-3/5 justify-center md:z-10 
                   md:ml-40 md:mt-16 md:justify-items-end'>
+                     <img src={hero} alt='home-page-text' />
                  {/* <img src={HomePageGraphic} alt='home-pageGraphic' /> 
                    <img src={fitness} alt='home-pageGraphic' />  */}
                     </div>

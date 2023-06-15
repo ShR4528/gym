@@ -1,44 +1,26 @@
-name: CI/CD
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+name: Build & Deploy
+on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install deps
         run: npm ci
-
-      - name: Build app
+      - name: Build project
         run: npm run build
-
-      - name: Run tests
-        run: npm run test
-
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: build
+          name: build-files
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build app
-        run: npm run build
-
-      - name: Deploy to production
-        run: |
-          # Add your deployment commands here
+      - name: Get build project
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
+   
