@@ -20,7 +20,7 @@ const Home = ({ setSelectedPage }: Props) => {
   return (
       <section
           id='home'
-          className='gap-16 bg-black py-10 md:h-full md:pb-0'>
+          className='gap-16  py-10 md:h-full md:pb-0'>
           {/* image and header */}
           <motion.div className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'
           onViewportEnter={() =>setSelectedPage(SelectedPage.Home)}
@@ -44,13 +44,13 @@ const Home = ({ setSelectedPage }: Props) => {
                   >
                       <div className='relative'>
                           <div className='before:absolute 
-                          before:-top-20 
+                           before:-top-20 
                            before:-left-20
                            before:z-[-1]'
                           >
                               {/* фото  logo*/}
 
-                              <img src={HomePageText} alt='home-page-text' />
+                              {/* <img src={HomePageText} alt='home-page-text' />  */}
                           </div>
                       </div>
                       <p className='mt-8 text-sm md:text-start'>
@@ -85,9 +85,9 @@ const Home = ({ setSelectedPage }: Props) => {
 
                   {/* image */}
               <div className='flex basis-3/5 justify-center md:z-10 
-               md:ml-40 md:mt-16 md:justify-items-end'>
-                 <img src={HomePageGraphic} alt='home-pageGraphic' /> 
-                   {/* <img src={fitness} alt='home-pageGraphic' />  */}
+                  md:ml-40 md:mt-16 md:justify-items-end'>
+                 {/* <img src={HomePageGraphic} alt='home-pageGraphic' /> 
+                   <img src={fitness} alt='home-pageGraphic' />  */}
                     </div>
             
           </motion.div>

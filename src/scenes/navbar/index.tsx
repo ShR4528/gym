@@ -5,10 +5,11 @@ import Link from './Link';
 import { SelectedPage } from '@/shared/types';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import ActionButton from '@/shared/ActionButton';
+import factory from '@/assets/factory.png';
 
 
 type Props = {
-  isTopOfPage: boolean;
+    isTopOfPage: boolean;
     selectedPage: SelectedPage;
     setSelectedPage: (value: SelectedPage) => void;
 }
@@ -16,8 +17,8 @@ type Props = {
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}: Props) => {
     const flexBetween = 'flex items-center justify-between';
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
-  const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
-  const navbarBackground = isTopOfPage ? '' : 'bg-primary-100 drop-shadow';
+    const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
+    const navbarBackground = isTopOfPage ? '' : 'bg-primary-100 drop-shadow';
 
   return (
       <nav>
@@ -26,7 +27,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}: Props) => {
             <div className={`${flexBetween} mx-auto w-5/6`}>
                   <div className={`${flexBetween} w-full gap-16`}>
                        {/* Left Side */}
-                      <img alt='logo' src={Logo} />
+                      <img alt='logo' src={factory} />
                       {/* Right Side */}
                       {isAboveMediumScreens ? (
                           <div className={`${flexBetween}  w-full`}>
