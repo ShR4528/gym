@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Get code
         uses: actions/checkout@v2
 
       - name: Install dependencies
