@@ -47,9 +47,9 @@ const Footer = () => {
            <p className='my-5'>Tempus metus mattis risus volutpat egestas.</p>
           <p>(333)425-6825</p>
           <p>info@evogym</p> 
-    //       <div className="mt-4">
-    //         <h1>Hello</h1>
-    //       </div> 
+           {/* <div className="mt-4">
+             <h1>Hello</h1>
+           </div>  */}
          </div>
       </div>
      </footer> 

@@ -16,7 +16,7 @@ const Class = ({ name, description, image }: Props) => {
         <div className={overlayStyles}>
           <p className="text-2xl">{name}</p>
           <p className="mt-5">{description}</p>
-          <p className="mt-5">{description}</p>
+          
         </div>
         <img alt={`${image}`} src={image} />
       </li>

@@ -52,6 +52,8 @@ const Home = ({ setSelectedPage }: Props) => {
                               {/* фото  logo*/}
 
                               {/* <img src={HomePageText} alt='home-page-text' />  */}
+                              <h1 className=''>Work Hard To Get Better Life</h1>
+                              <img src={SponsorFortune} alt="" />
                              
                           </div>
                       </div>
